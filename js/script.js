@@ -102,7 +102,7 @@ const printQuote = () => {
     html += `<span class="year">${randQuoteObject.year}</span>`;
   }
   html += `</p>`; // closes p tag
-  return html;
+  return document.getElementById('quote-box').innerHTML = html;
 }
 //Adding printQuote function to overwrite default quote from template
 document.getElementById('quote-box').innerHTML = printQuote();
