@@ -11,7 +11,6 @@ project 1 - A Random Quote Generator
  * `quotes` array
  * Create an array of objects that each contain quote, source, citation and year 
 ***/
-
 const quotes = [
 {quote: 'It has become appallingly obvious that our technology has exceeded our humanity.',
 source: 'Albert Einstein',
@@ -102,9 +101,10 @@ const printQuote = () => {
   } if (randQuoteObject.year !== ''){
     html += `<span class="year">${randQuoteObject.year}</span>`;
   }
-  html += `</p>`;
+  html += `</p>`; // closes p tag
   return html;
 }
+//Adding printQuote function to overwrite default quote from template
 document.getElementById('quote-box').innerHTML = printQuote();
 /***
  * click event listener for the print quote button
