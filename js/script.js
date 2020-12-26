@@ -94,16 +94,21 @@ const getRandomQuote = () => {
 const printQuote = () => {
   let html = '';
   let randQuoteObject = getRandomQuote(); // ensures same object is used
-  html += `<p class="quote">${randomQuoteObject.quote}</p>`; 
+  html += `<p class="quote">${randQuoteObject.quote}</p>`; 
   if (randQuoteObject.source !== ''){
-    html += `<p class="quote">${randomQuoteObject.source} `;
+    html += `<p class="source">${randQuoteObject.source}`;
+  } if (randQuoteObject.citation !== ''){
+    html += `<span class="citation">${randQuoteObject.citation}</span>`;
+  } if (randQuoteObject.year !== ''){
+    html += `<span class="year">${randQuoteObject.year}</span>`;
   }
+  html += `</p>`;
   return html;
 }
-
+document.getElementById('quote-box').innerHTML = printQuote();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-//document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
